@@ -1,3 +1,6 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
 from rest_framework.response import Response
 from rest_framework.views import APIView as ApiView
 
@@ -47,3 +50,7 @@ class RoleView(ApiView):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
 # Create your views here.
+
+def hello_world(request):
+    return HttpResponse("Hello World!")
+
